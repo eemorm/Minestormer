@@ -1,4 +1,5 @@
 #include "textures.hpp"
+#include "sizing.hpp"
 #include <iostream>
 
 // Define the global texture and sprites

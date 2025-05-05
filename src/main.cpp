@@ -1,5 +1,8 @@
 ﻿// Textures
+#include "cell.hpp"
+#include "grid.hpp"
 #include "textures.hpp"
+#include "sizing.hpp"
 
 // SFML
 #include <SFML/Audio.hpp>
@@ -14,12 +17,19 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({640, 480}), "Minestormer", sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode({SCREEN_WIDTH, SCREEN_HEIGHT}), "Minestormer", sf::Style::Default);
 
     if (!loadTextures())
     {
         return -1;
     }
+
+    initializeGrid();
+
+    float gridWidth = GRID_WIDTH * (TILE_WIDTH + PADDING) - PADDING;
+    float gridHeight = GRID_HEIGHT * (TILE_HEIGHT + PADDING) - PADDING;
+
+    sf::Vector2f containerPosition((window.getSize().x - gridWidth) / 2.f, (window.getSize().y - gridHeight) / 2.f);
 
     while (window.isOpen())
     {
@@ -33,7 +43,9 @@ int main()
         }
 
         window.clear(sf::Color(127, 127, 127));
-        window.draw(mine1);
+
+        drawGrid(window);
+
         window.display();
     }
 

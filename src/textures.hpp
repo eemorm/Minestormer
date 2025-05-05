@@ -10,9 +10,6 @@ bool loadTextures();
 
 extern sf::Texture texture;
 
-inline const int TILE_WIDTH = 16;
-inline const int TILE_HEIGHT = 16;
-
 extern sf::Sprite mine1;
 extern sf::Sprite mine2;
 extern sf::Sprite mine3;

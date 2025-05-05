@@ -1,3 +1,4 @@
+#pragma once
 // Textures
 #include "textures.hpp"
 
@@ -15,9 +16,16 @@ class Cell
 {
     private:
         sf::Sprite hidden = closedbox;
-        sf::Sprite texture;
+        sf::Sprite sprite;
         int minesAround;
     public:
+        Cell() {}
+        ~Cell() {}
+        sf::Sprite getHidden() { return hidden; }
+        void setSprite(sf::Sprite s) { sprite = s; }
+        sf::Sprite getSprite() { return sprite; }
+        void setMinesAround(int m) { minesAround = m; }
+        int getMinesAround() { return minesAround; }
         void reveal()
         {
             

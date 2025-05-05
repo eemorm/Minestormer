@@ -1,5 +1,11 @@
-//Custom Headers
+#pragma once
+//Custom Includes
 #include "textures.hpp"
+#include "cell.hpp"
+
+//Basic
+#include <iostream>
+#include <vector>
 
 // SFML
 #include <SFML/Audio.hpp>
@@ -8,6 +14,5 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-//Basic Headers
-#include <iostream>
-#include <optional>
+void initializeGrid();
+void drawGrid(sf::RenderWindow& window);
