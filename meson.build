@@ -7,6 +7,10 @@ sfml_dep = dependency('sfml', method : 'pkg-config')
 executable('Minestormer',
            'src/main.cpp',
            'src/textures.cpp',
+           'src/cell.cpp',
            'src/grid.cpp',
+           'src/sizing.cpp',
+           'src/generation.cpp',
+           'src/death.cpp',
            install : true,
            dependencies: [sfml_dep])

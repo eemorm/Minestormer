@@ -14,5 +14,10 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+class Cell;
+
+extern std::vector<std::vector<Cell>> grid;
+
 void initializeGrid();
 void drawGrid(sf::RenderWindow& window);
+void revealEmptyCells(int row, int col);
